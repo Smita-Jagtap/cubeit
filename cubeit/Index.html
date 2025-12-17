@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Cube of a Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #message {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculate Cube of a Number</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="calculateCube()">Find Cube</button>
+    <div id="message"></div>
+    <div id="result"></div>
+
+    <script>
+        function calculateCube() {
+            const num = document.getElementById('numberInput').value;
+            const messageDiv = document.getElementById('message');
+            const resultDiv = document.getElementById('result');
+
+            if (num === '') {
+                messageDiv.innerText = 'Enter something!';
+                resultDiv.innerText = ''; // Clear previous result
+                return;
+            }
+
+            messageDiv.innerText = ''; // Clear message if input is valid
+            const cube = Math.pow(num, 3);
+            resultDiv.innerText = `The cube of ${num} is ${cube}.`;
+        }
+    </script>
+</body>
+</html>
+
