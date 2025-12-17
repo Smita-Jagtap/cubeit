@@ -22,7 +22,8 @@ jobs:
           pip install pytest-playwright
 
       - name: Ensure browsers are installed
-        run: python -m playwright install chromium --with-deps
+        run: |
+          python -m playwright install chromium --with-deps chromium
 
       - name: Run Tests
         run: |
